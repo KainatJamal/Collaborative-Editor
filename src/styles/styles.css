@@ -1,0 +1,292 @@
+/* Global Styles */
+body {
+  background-color: #121212; /* Darker background for a sleek look */
+  color: #f5f5f5; /* Light text for contrast */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* UI Components */
+button {
+  background-color: #ff8a00; /* Vibrant Orange for buttons */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f57c00; /* Slightly darker orange on hover */
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #e65100; /* Even darker orange on active */
+  transform: scale(0.98);
+}
+
+/* Editor Body */
+.editor-body {
+  padding: 30px 50px;
+  background-color: #2a2a2a; /* Dark background for content area */
+  margin-left: 220px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  height: 700px;  /* Set height to make the editor longer */
+  width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Ensure content is aligned to the top */
+  overflow-y: auto; /* Allow scrolling for large documents */
+  position: relative;  /* Make sure content within it is scrollable */
+  background-color: #121212; /* Matching the background color */
+}
+
+/* Font Dropdown */
+.font-dropdown-container {
+  position: absolute;
+  left: 20px;
+  top: 200px;
+  z-index: 10;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+}
+
+.font-dropdown {
+  background-color: #333333;
+  color: #f5f5f5;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+}
+
+.font-dropdown:hover {
+  background-color: #ff8a00;
+}
+
+/* ContentEditable */
+.editor-content {
+  width: 100%;
+  min-height: 500px;  /* Ensure enough height */
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  color: #212121;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  white-space: pre-wrap; /* Maintain spacing and line breaks */
+  overflow-y: auto; /* Ensure scrolling in case of large content */
+  word-wrap: break-word; /* Ensure long words break properly */
+  user-select: text; /* Make sure text can be selected */
+  outline: none; /* Remove outline when editing */
+}
+
+.editor-content:empty:before {
+  content: "Start typing here..."; /* Placeholder text when empty */
+  color: #888888;
+  font-style: italic;
+}
+
+/* Header and Footer */
+header {
+  background-color: #333333; /* Darker gray header */
+  color: #ffffff;
+  padding: 25px;
+  text-align: center;
+  border-bottom: 3px solid #ff8a00;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.editor-footer {
+  padding: 20px;
+  text-align: center;
+  background-color: #333333;
+  border-top: 3px solid #ff8a00;
+}
+
+/* File Import Button */
+.file-import-container {
+  margin-top: 15px;
+  position: relative;
+}
+
+.file-import-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff8a00;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.file-import-button:hover {
+  background-color: #f57c00; /* Hover color */
+}
+
+/* Progress Bar */
+.import-progress-container {
+  width: 100%;
+  background-color: #424242;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.import-progress-bar {
+  height: 10px;
+  background-color: #00c853;
+  border-radius: 5px;
+}
+
+.import-progress-text {
+  text-align: center;
+  color: #ffffff;
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+/* Success Bar */
+.import-success-bar {
+  background-color: #089141;
+  color: white;
+  padding: 1px;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 8px;
+  height :25px ;
+}
+/* Font Size Dropdown */
+.font-size-dropdown-container {
+  position: absolute;
+  left: 20px;
+  top: 280px;  /* Below the font dropdown */
+  z-index: 10;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+
+}
+
+.font-size-dropdown {
+  background-color: #333333;
+  color: #f5f5f5;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  width:175px;
+}
+
+.font-size-dropdown:hover {
+  background-color: #ff8a00;
+}
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.toolbar button {
+  padding: 10px 15px;
+  background-color: #ff8a00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.toolbar button:hover {
+  background-color: #f57c00;
+}
+.color-picker-container {
+  position: absolute;
+  left: 20px;
+  top: 360px; /* Below the font size dropdown */
+  z-index: 10;
+  background-color: #2a2a2a;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.color-picker {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.add-user-button {
+  position: absolute;
+  top: 270px;
+  right: 10px;
+  background-color: #91520a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 20;
+}
+
+.add-user-button:hover {
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+.add-user-button:active {
+  background-color: #e65100;
+  transform: scale(0.98);
+}
+
+.add-user-button .icon {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 8px;
+
+}
+.add-user-button.locked {
+  background-color: #f44336;
+}
+
+
+.add-user-button:hover {
+  background-color: #45a049;
+}
+
+.add-user-button.locked:hover {
+  background-color: #d32f2f;
+}
